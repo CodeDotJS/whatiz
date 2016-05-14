@@ -1,10 +1,10 @@
 'use strict';
 
-const cheerio = require('cheerio');
+var cheerio = require('cheerio');
 
-const got = require('got');
+var got = require('got');
 
-const Promise = require('pinkie-promise');
+var Promise = require('pinkie-promise');
 
 module.exports = function (packageName) {
 	if (typeof packageName !== 'string') {
