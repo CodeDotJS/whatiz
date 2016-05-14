@@ -1,0 +1,46 @@
+{
+  "name": "whatiz",
+  "version": "1.0.0",
+  "description": "Display one-line manual node package descriptions available on npmjs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedotjs/whatiz.git"
+  },
+  "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.com)",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "nodejs",
+    "npm",
+    "package",
+    "info",
+    "manual",
+    "about",
+    "descriptions",
+    "npmjs",
+    "modules",
+    "information"
+  ],
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "got": "^5.0.0",
+    "pinkie-promise": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/codedotjs/whatiz/issues"
+  },
+  "homepage": "https://github.com/codedotjs/whatiz#readme",
+  "main": "index.js"
+}
