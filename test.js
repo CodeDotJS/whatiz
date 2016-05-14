@@ -6,4 +6,3 @@ test(async t => {
 
 	t.is(whatiz, 'packstat - Displays metrics about npm modules.');
 });
-
