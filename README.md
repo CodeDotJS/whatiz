@@ -2,6 +2,8 @@
 
 > Display one-line manual node package descriptions available on npmjs.
 
+[![Build Status](https://travis-ci.org/CodeDotJS/whatiz.svg?branch=master)](https://travis-ci.org/CodeDotJS/whatiz)
+
 ## Install 
 
 ```
