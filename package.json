@@ -1,6 +1,6 @@
 {
   "name": "whatiz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Display one-line manual node package descriptions available on npmjs",
   "license": "MIT",
   "repository": {
