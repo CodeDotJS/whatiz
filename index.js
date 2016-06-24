@@ -16,7 +16,9 @@ module.exports = function (packageName) {
 	return got(url).then(function (res) {
 		var $ = cheerio.load(res.body);
 
-		return $('.package-description').text() || null;
+		return {
+			info: $('.package-description').text() || null
+		};
 	}).catch(function (err) {
 		if (err.statusCode === 404) {
 			err.message = 'Package doesn\'t exist';
