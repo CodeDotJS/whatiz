@@ -1,29 +1,25 @@
 'use strict';
 
-var got = require('got');
+const got = require('got');
+const cheerio = require('cheerio');
+const Promise = require('pinkie-promise');
 
-var cheerio = require('cheerio');
-
-var Promise = require('pinkie-promise');
-
-module.exports = function (packageName) {
+module.exports = packageName => {
 	if (typeof packageName !== 'string') {
 		return Promise.reject(new Error('package name required'));
 	}
 
-	var url = 'https://www.npmjs.com/packages/' + packageName;
+	const url = `https://www.npmjs.com/packages/${packageName}`;
 
-	return got(url).then(function (res) {
-		var $ = cheerio.load(res.body);
-
+	return got(url).then(res => {
+		const $ = cheerio.load(res.body);
 		return {
-			info: $('.package-description').text() || null
+			info: $('.package-description').text() || `couldn't find description for package ${packageName}`
 		};
-	}).catch(function (err) {
+	}).catch(err => {
 		if (err.statusCode === 404) {
 			err.message = 'Package doesn\'t exist';
 		}
-
-		throw err;
+		return err.message;
 	});
 };
