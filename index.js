@@ -14,7 +14,7 @@ module.exports = packageName => {
 	return got(url).then(res => {
 		const $ = cheerio.load(res.body);
 		return {
-			info: $('.package-description').text() || `couldn't find description for package ${packageName}`
+			info: $('.markdown p, .markdown li').text() || `couldn't find description for package ${packageName}`
 		};
 	}).catch(err => {
 		if (err.statusCode === 404) {
